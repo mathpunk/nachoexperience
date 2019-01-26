@@ -1,87 +1,64 @@
-//<<<<<<< HEAD
-////using System;
-////using System.Collections;
-////using System.Collections.Generic;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
-////public class Reactions
-////{
-////    public enum Verb { Light, Photograph, Record, Pay };
-////    public enum Item { Beach, Cat, Grocer, BluesBand };
-////    public enum Action { Light, Cat };
+public class Reactions
+{
+    public enum Verb { Light, Photograph, Record, Pay };
+    public enum Item {
+        // Wanted items
+        Beach,
+        Cat,
+        Grocer,
+        BluesBand,
+        // Unwanted items
+        Squirrel,
+        Rat,
+        TacoVendor,
+        ChineseRestaurant,
+        MusicShop,
+        Band,
+        NavyPier,
+        FerrisWheel
+    };
+    public enum Action { Light, Cat };
 
-////    public string GetQuip(Action action, Verb verb, Item item)
-////    {
-////        switch (action)
-////        {
-////            case Action.Light:
-////            case Action.Cat:
-////                return "I'll call you Mr. Whiskers. I feel less lonely already.";
+    public string GetQuip(Action action, Verb verb, Item item)
+    {
+        switch (action)
+        {
+            case Action.Light:
+            case Action.Cat:
+                return "I'll call you Mr. Whiskers. I feel less lonely already.";
 
-////            case Action.Beach:
-////            case Action.Photograph:
-////                return "The water reaches right up to the city… just like in Mar del Plata.";
+            case Action.Light:
+            case Action.Rat:
+                return "Aaaaaaaaaaaaaaaaaaaaaahhhhh!!!!!";
 
-////            case Action.Grocer:
-////            case Action.Pay:
-////                return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already."
+            case Action.Light:
+            case Action.Squirrel:
+                return "Cute. But not a very good pet.";
 
-////            case Action.BluesBand:
-////            case Action.Record:
-////                return "Mm, yes! The blues reminds me that you can be happy even when times are tough.";
+            case Action.Photograph:
+            case Action.Beach:
+                return "The water reaches right up to the city… just like in Mar del Plata.";
 
-////            default:
-////                // return "Sigh... I don't know why I thought that " + Gerund(verb) + " a " + item + " would help me feel better...";
-////                return "Sigh... I don't know why I thought that would help me feel less homesick."
-////        }
-////    }
+            case Action.Pay:
+            case Action.Grocer:
+                return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already."
 
-////    public string Gerund(Verb verb)
-////    {
-////        return verb.ToString() + "ing";
-////    }
+            case Action.Record:
+            case Action.BluesBand:
+                return "Mm, yes! I love it. The blues reminds me that you can be happy even when times are tough.";
 
-////}
-//=======
-//using System;
-//using System.Collections;
-//using System.Collections.Generic;
+            default:
+                return "Sigh... I don't know why I thought that would help me feel less homesick."
+        }
+    }
 
-//public class Reactions
-//{
-//    public enum Verb { Light, Photograph, Record, Pay };
-//    public enum Item { Beach, Cat, Grocer, BluesBand };
-//    public enum Action { Light, Cat, Beach, Photograph, Grocer, Pay, BluesBand, Record };
+    public string Gerund(Verb verb)
+    {
+        return verb.ToString() + "ing";
+    }
 
-//    public string GetQuip(Action action, Verb verb, Item item)
-//    {
-//        switch (action)
-//        {
-//            case Action.Light:
-//            case Action.Cat:
-//                return "I'll call you Mr. Whiskers. I feel less lonely already.";
-
-//            case Action.Beach:
-//            case Action.Photograph:
-//                return "The water reaches right up to the city… just like in Mar del Plata.";
-
-//            case Action.Grocer:
-//            case Action.Pay:
-//                return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already."
-
-//            case Action.BluesBand:
-//            case Action.Record:
-//                return "Mm, yes! The blues reminds me that you can be happy even when times are tough.";
-
-//            default:
-//                // return "Sigh... I don't know why I thought that " + Gerund(verb) + " a " + item + " would help me feel better...";
-//                return "Sigh... I don't know why I thought that would help me feel less homesick."
-//        }
-//    }
-
-//    public string Gerund(Verb verb)
-//    {
-//        return verb.ToString() + "ing";
-//    }
-
-//}
-//>>>>>>> 46e651a838bab23e2bdd7584618aabea5c12653f
+}
