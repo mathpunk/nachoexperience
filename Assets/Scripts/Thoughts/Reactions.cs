@@ -21,7 +21,6 @@ public class Reactions
         NavyPier,
         FerrisWheel
     };
-    public enum Action { Light, Cat };
 
     public string GetQuip(Action action, Verb verb, Item item)
     {
