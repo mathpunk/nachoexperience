@@ -16,7 +16,7 @@ public class StudioRoom : HomeRoomBase
 	void Start ()
     {
         // Get strings for this room
-        m_studioHints = m_hints.StudioHints;
+        m_studioHints = m_baseHints.StudioHints;
 	}
 	
 	// Update is called once per frame

@@ -9,7 +9,7 @@ public class HomeRoomBase : MonoBehaviour
     protected GameObject m_roomName;
     protected Texture2D m_bwTexture;
     protected Texture2D m_colorTexture;
-    protected HomeHints m_hints;
+    protected HomeHints m_baseHints;
 
     // Use this for initialization
     void Start ()
