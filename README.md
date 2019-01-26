@@ -24,7 +24,7 @@ Studio -> My brother loves the blues
 
 # Code Requirements
 Scene Management/GSM class
-+ Camera Control class
+and Camera Control class
 Character State Machine class
 Puzzle for studio (get Blues music)
 Puzzle for kitchen (get Milanesa from Trader Jane's)
@@ -33,7 +33,7 @@ Puzzle for living room (get a pet)
 Tree State Machine class
 Animal State Machine class
 Thought bubble/clue class
-+ String Manager class
+and String Manager class
 Abstract Room base class + Room Specializations
 Mailbox Interaction class
 Scene State Manager (puzzle master state)
