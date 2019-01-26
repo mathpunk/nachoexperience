@@ -9,18 +9,18 @@ public class HomeRoomBase : MonoBehaviour
     protected GameObject m_roomName;
     protected Texture2D m_bwTexture;
     protected Texture2D m_colorTexture;
-    protected HomeHints m_baseHints;
+    protected Hints m_hints;
 
     // Use this for initialization
     void Start ()
     {
         // Get m_roomName in child class
-	}
-	
-	// Update is called once per frame
-	void Update ()
+  }
+
+  // Update is called once per frame
+  void Update ()
     {
-	    // Select texture to render
+      // Select texture to render
         // Object will have two textures for it, color and b&w
-	}
+  }
 }
