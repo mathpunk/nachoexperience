@@ -1,23 +1,30 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 // version 0.1
 // goal: Generic text for when Nacho acts on an item.
 
-enum Verb { Light, Photograph, Record, Pay};
-enum Item { Beach, Cat, Grocer, BluesBand };
+public class ReturningHome
+{
+    public enum Verb { Light, Photograph, Record, Pay };
+    public enum Item { Beach, Cat, Grocer, BluesBand };
+    public enum Action { Light, Cat };
 
-type Action = tuple (Verb, Item);
-
-string Quip(Action action) {
-    switch action
+    public string GetQuip(Action action, Verb verb, Item item)
     {
-        case ( Light, Cat):
-            "I think I'll call you... Mr. Whiskers. I feel less lonely already.";
-            break;
-        default:
-            "Sigh... I don't know why I thought that " + Gerund(action.verb) + " a " + action.item + " would help me feel better...";
+        switch (action)
+        {
+            case Action.Light:
+            case Action.Cat:
+                return "I think I'll call you... Mr. Whiskers. I feel less lonely already.";
+            default:
+                return "Sigh... I don't know why I thought that " + Gerund(verb) + " a " + item + " would help me feel better...";
+        }
     }
-}
 
-string function Gerund(Verb verb) {
-    return verb.toString() + "ing";
-}
+    public string Gerund(Verb verb)
+    {
+        return verb.ToString() + "ing";
+    }
 
+}
