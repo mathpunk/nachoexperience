@@ -5,7 +5,22 @@ using System.Collections.Generic;
 public class Reactions
 {
     public enum Verb { Light, Photograph, Record, Pay };
-    public enum Item { Beach, Cat, Grocer, BluesBand };
+    public enum Item {
+        // Wanted items
+        Beach,
+        Cat,
+        Grocer,
+        BluesBand,
+        // Unwanted items
+        Squirrel,
+        Rat,
+        TacoVendor,
+        ChineseRestaurant,
+        MusicShop,
+        Band,
+        NavyPier,
+        FerrisWheel
+    };
     public enum Action { Light, Cat };
 
     public string GetQuip(Action action, Verb verb, Item item)
@@ -16,20 +31,27 @@ public class Reactions
             case Action.Cat:
                 return "I'll call you Mr. Whiskers. I feel less lonely already.";
 
-            case Action.Beach:
+            case Action.Light:
+            case Action.Rat:
+                return "Aaaaaaaaaaaaaaaaaaaaaahhhhh!!!!!";
+
+            case Action.Light:
+            case Action.Squirrel:
+                return "Cute. But not a very good pet.";
+
             case Action.Photograph:
+            case Action.Beach:
                 return "The water reaches right up to the city… just like in Mar del Plata.";
 
-            case Action.Grocer:
             case Action.Pay:
+            case Action.Grocer:
                 return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already."
 
-            case Action.BluesBand:
             case Action.Record:
-                return "Mm, yes! The blues reminds me that you can be happy even when times are tough.";
+            case Action.BluesBand:
+                return "Mm, yes! I love it. The blues reminds me that you can be happy even when times are tough.";
 
             default:
-                // return "Sigh... I don't know why I thought that " + Gerund(verb) + " a " + item + " would help me feel better...";
                 return "Sigh... I don't know why I thought that would help me feel less homesick."
         }
     }
