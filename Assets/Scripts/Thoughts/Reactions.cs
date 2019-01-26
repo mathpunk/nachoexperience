@@ -23,6 +23,7 @@ public class Reactions
         FerrisWheel
     };
 
+
     public string GetQuip(Action action, Verb verb, Item item)
     {
         switch (action)
