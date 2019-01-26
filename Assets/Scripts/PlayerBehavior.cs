@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    #region PlayerBehavior Private Members
+    private GameObject m_player;
 
-    GameObject m_player;
-
-    // Where am I (home room, city block)
-    // PlayerStateManger member class
-
-    #endregion
+    public enum PlayerState
+    {
+        Idle,
+        WalkingLeft,
+        WalkingRight,
+        GoingUpstairs,
+        GoingDownstairs,
+        EnteringDoor,
+        UsingCellPhone,
+        ThinkingClue
+    }
 
     // Use this for initialization
     void Start ()
