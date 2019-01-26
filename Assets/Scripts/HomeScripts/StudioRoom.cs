@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class StudioRoom : HomeRoomBase
 {
-    private string[] m_studioHints;
-
-    public string GetHint()
+    protected override string GetHint()
     {
-        var rnd = Random.Range(0, m_studioHints.Length - 1);
-        return m_studioHints[rnd];
+        var rnd = Random.Range(0, m_hints.Studio.Length - 1);
+        return m_hints.Studio[rnd];
     }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        // Get strings for this room
-        m_studioHints = m_hints.StudioHints;
+        m_roomName = GameObject.Find("StudioRoom");
 	}
 	
 	// Update is called once per frame

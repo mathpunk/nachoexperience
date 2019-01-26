@@ -2,7 +2,7 @@
 // Goal: Quips about the initial, unfilled, sad & lonely state of Nacho's place.
 
 // General
-using System.Collections.Generic;
+
 public class Hints
 {
     public string[] LivingRoom = {
