@@ -1,16 +1,16 @@
 # Nacho's Experience
 
 # Primary Objectives
-Picture -> Bedroom
-Blues -> Studio
-Trader Jane's -> Cooking/Kitchen
-Cat -> Living Room
+- Picture -> Bedroom
+- Blues -> Studio
+- Trader Jane's -> Cooking/Kitchen
+- Cat -> Living Room
 
 # Objective Clues
-Bedroom -> I need a vista to brighten up this room
-Living Room -> I miss my pet from back home
-Kitchen -> My mom made the best Milanesa
-Studio -> My brother loves the blues
+- Bedroom -> I need a vista to brighten up this room
+- Living Room -> I miss my pet from back home
+- Kitchen -> My mom made the best Milanesa
+- Studio -> My brother loves the blues
 
 # Game Dynamics
 - Wake up
@@ -23,24 +23,24 @@ Studio -> My brother loves the blues
 - Cinematic "welcome home" -> Room takes color or player gets more sad if no rememberal
 
 # Code Requirements
-Scene Management/GSM class
-and Camera Control class
-Character State Machine class
-Puzzle for studio (get Blues music)
-Puzzle for kitchen (get Milanesa from Trader Jane's)
-Puzzle for bedroom (get Picture of Chicago)
-Puzzle for living room (get a pet)
-Tree State Machine class
-Animal State Machine class
-Thought bubble/clue class
-and String Manager class
-Abstract Room base class + Room Specializations
-Mailbox Interaction class
-Scene State Manager (puzzle master state)
+- Scene Management/GSM class
+-- and Camera Control class
+- Character State Machine class
+- Puzzle for studio (get Blues music)
+- Puzzle for kitchen (get Milanesa from Trader Jane's)
+- Puzzle for bedroom (get Picture of Chicago)
+- Puzzle for living room (get a pet)
+- Tree State Machine class
+- Animal State Machine class
+- Thought bubble/clue class
+-- and String Manager class
+- Abstract Room base class + Room Specializations
+- Mailbox Interaction class
+- Scene State Manager (puzzle master state)
 
 
 # Assets
-Buildings:
+## Buildings:
 - Music House
 - Restaurant
 - Grocery
@@ -54,13 +54,13 @@ Buildings:
 - Mailbox
 - UI/Main Menu
 
-Animals:
+## Animals:
 - Crow
 - Cat
 - Rat
 - Squirrel
 
-Sound effects:
+## Sound effects:
 - Latin music
 - Blues
 - Opera
@@ -71,7 +71,7 @@ Sound effects:
 - Rat squeeking
 - Mailbox
 
-Misc Assets:
+## Misc Assets:
 - Sadness Bar
 - Photos
 - Phone and Icons
