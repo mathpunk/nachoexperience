@@ -6,7 +6,7 @@ public class Reactions
 {
     public enum Verb { Light, Photograph, Record, Pay };
     public enum Item { Beach, Cat, Grocer, BluesBand };
-    public enum Action { Light, Cat };
+    public enum Action { Light, Cat, Beach, Photograph, Grocer, Pay, BluesBand, Record };
 
     public string GetQuip(Action action, Verb verb, Item item)
     {
