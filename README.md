@@ -7,10 +7,10 @@
 - Cat -> Living Room
 
 # Objective Clues
-- Bedroom -> I need a vista to brighten up this room
-- Living Room -> I miss my pet from back home
-- Kitchen -> My mom made the best Milanesa
-- Studio -> My brother loves the blues
+- Bedroom -> I need a *vista* to brighten up this room
+- Living Room -> I miss my *pet* from back home
+- Kitchen -> I miss my mom's *homemade* Milanesa
+- Studio -> My brother loves the *blues*
 
 # Game Dynamics
 - Wake up
