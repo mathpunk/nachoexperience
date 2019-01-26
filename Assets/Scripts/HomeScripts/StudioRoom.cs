@@ -12,12 +12,20 @@
 //        return m_studioHints[rnd];
 //    }
 
+<<<<<<< HEAD
 //	// Use this for initialization
 //	void Start ()
 //    {
 //        // Get strings for this room
 //        m_studioHints = m_hints.StudioHints;
 //	}
+=======
+	// Use this for initialization
+	void Start ()
+    {
+        // Get strings for this room
+	}
+>>>>>>> 46e651a838bab23e2bdd7584618aabea5c12653f
 	
 //	// Update is called once per frame
 //	void Update ()
