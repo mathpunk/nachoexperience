@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BedroomRoom : HomeRoomBase
 {
-    
-	// Use this for initialization
-	void Start ()
+    protected override string GetHint()
+    {
+        var rnd = Random.Range(0, m_hints.Bedroom.Length - 1);
+        return m_hints.Bedroom[rnd];
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         m_roomName = GameObject.Find("BedroomRoom");
 

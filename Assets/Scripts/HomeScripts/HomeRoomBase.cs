@@ -7,20 +7,26 @@ public class HomeRoomBase : MonoBehaviour
     public bool m_MemoryFound = false;
 
     protected GameObject m_roomName;
+
     protected Texture2D m_bwTexture;
     protected Texture2D m_colorTexture;
+
     protected Hints m_hints;
+
+    virtual protected string GetHint()
+    {
+        return null;
+    }
 
     // Use this for initialization
     void Start ()
     {
-        // Get m_roomName in child class
-  }
 
-  // Update is called once per frame
-  void Update ()
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
-      // Select texture to render
-        // Object will have two textures for it, color and b&w
-  }
+
+    }
 }
