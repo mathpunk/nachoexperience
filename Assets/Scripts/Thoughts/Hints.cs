@@ -1,5 +1,3 @@
-// recovery version
-
 public class Hints
 {
     public string[] LivingRoom = {
