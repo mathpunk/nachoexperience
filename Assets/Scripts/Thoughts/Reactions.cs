@@ -4,9 +4,16 @@ using System.Collections.Generic;
 
 public class Reactions
 {
-    public enum Verb { Light, Photograph, Record, Pay };
-    public enum Action { Light, Cat, Beach, Photograph, Grocer, Pay, BluesBand, Record };
-    public enum Item {
+    public enum Verb
+    {
+        Light,
+        Photograph,
+        Record,
+        Pay
+    };
+
+    public enum Item
+    {
         // Wanted items
         Beach,
         Cat,
@@ -23,37 +30,59 @@ public class Reactions
         FerrisWheel
     };
 
-
-    public string GetQuip(Action action, Verb verb, Item item)
+    public string GeneralFailure()
     {
-        switch (action)
+        return "Sigh... I don't know why I thought that would help me feel less homesick.";
+    }
+
+    public string GetQuip(Verb verb, Item item)
+    {
+        switch (item)
         {
-            case Action.Light:
-            case Action.Cat:
-                return "I'll call you Mr. Whiskers. I feel less lonely already.";
+            case Item.Cat:
+                switch (verb)
+                {
+                    case Verb.Light:
+                        return "I'll call you Mr. Whiskers! I feel less lonely already.";
+                    case Verb.Photograph:
+                        return "I guess I'm a guy who takes cat photos now. Huh.";
+                    case Verb.Record:
+                        return "C'mon kitty... Meow or purr or something... Dang.";
+                    case Verb.Pay:
+                        return "I don't think this cat takes cards. What a weird thing to do --- I better go home and rest.";
+                    default:
+                        return GeneralFailure();
+                }
 
-            case Action.Light:
-            case Action.Rat:
-                return "Aaaaaaaaaaaaaaaaaaaaaahhhhh!!!!!";
+            case Item.Beach:
+                switch (verb)
+                {
+                    case Verb.Photograph:
+                        return "A great view. The water reaches right up to the city... just like in Mar del Plata.";
+                    default:
+                        return GeneralFailure();
+                }
 
-            case Action.Light:
-            case Action.Squirrel:
-                return "Cute. But not a very good pet.";
+            case Item.Grocer:
+                switch (verb)
+                {
+                    case Verb.Pay:
+                        return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already.";
+                    default:
+                        return GeneralFailure();
+                }
 
-            case Action.Photograph:
-            case Action.Beach:
-                return "The water reaches right up to the city… just like in Mar del Plata.";
-
-            case Action.Pay:
-            case Action.Grocer:
-                return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already."
-
-            case Action.Record:
-            case Action.BluesBand:
-                return "Mm, yes! I love it. The blues reminds me that you can be happy even when times are tough.";
+            case Item.BluesBand:
+                switch (verb)
+                {
+                    case Verb.Record:
+                        return "Yes! I love it! The blues reminds me that you can be happy even when times are tough.";
+                    default:
+                        return GeneralFailure();
+                }
 
             default:
-                return "Sigh... I don't know why I thought that would help me feel less homesick."
+                return "Sigh... I don't know why I thought that would help me feel less homesick.";
         }
     }
 
