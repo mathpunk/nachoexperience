@@ -43,7 +43,7 @@ public class Reactions
                 switch (verb)
                 {
                     case Verb.Light:
-                        return "I'll call you Mr. Whiskers! I feel less lonely already.";
+                        return "You look just like my old cat, Mr. Whiskers!";
                     case Verb.Photograph:
                         return "I guess I'm a guy who takes cat photos now. Huh.";
                     case Verb.Record:
