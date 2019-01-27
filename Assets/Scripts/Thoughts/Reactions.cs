@@ -30,6 +30,7 @@ public class Reactions : MonoBehaviour
         NavyPier,
         FerrisWheel
     };
+    private Dictionary<Item, Dictionary<Verb, string>> CatReactions;
 
     private Dictionary<Verb, string> CatQuips;
     private Dictionary<Verb, string> BeachQuips;

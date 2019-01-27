@@ -7,7 +7,9 @@ public class Hints
 {
     public string[] LivingRoom = {
         "It would be nice to have someone to talk to. Even a *pet* would make me feel less alone.",
-        "I’m tired of talking to myself. Maybe if I had a *pet* to listen to me."
+        "I’m tired of talking to myself. Maybe if I had a *pet* to listen to me.",
+        "This room is so empty. If *Mr Whiskers* was here to *pet*..."
+
     };
 
     public string[] Bedroom = {
@@ -25,7 +27,7 @@ public class Hints
     public string[] Studio = {
         "Work, work, work. I should really put on some *music* that's just for me...",
         "Chicago’s a great music town. Maybe I should *go listen to something I like*...",
-        "(singing) Going to Kansas City, sorry that I can’t take you..."
+        "I've been thinking about my brother. We always liked listening to *the blues* together."
     };
 
 }
