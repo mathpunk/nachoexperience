@@ -8,7 +8,6 @@ public class SpriteAnimHandler : MonoBehaviour
     {
         Paused,
         Animating
-
     }
 
     // Sprite Texture
