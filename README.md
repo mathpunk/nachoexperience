@@ -7,11 +7,6 @@
 - Cat -> Living Room
 
 # Objective Clues
-- Bedroom -> I need a vista to brighten up this room
-- Living Room -> I miss my pet from back home
-- Kitchen -> My mom made the best Milanesa
-- Studio -> My brother loves the blues
-=======
 - Bedroom -> I need a *vista* to brighten up this room
 - Living Room -> I miss my *pet* from back home
 - Kitchen -> I miss my mom's *homemade* Milanesa
@@ -29,7 +24,7 @@
 
 # Code Requirements
 - Scene Management/GSM class
--- and Camera Control class
+- Camera Control class
 - Character State Machine class
 - Puzzle for studio (get Blues music)
 - Puzzle for kitchen (get Milanesa from Trader Jane's)
@@ -38,7 +33,7 @@
 - Tree State Machine class
 - Animal State Machine class
 - Thought bubble/clue class
--- and String Manager class
+- String Manager class
 - Abstract Room base class + Room Specializations
 - Mailbox Interaction class
 - Scene State Manager (puzzle master state)
