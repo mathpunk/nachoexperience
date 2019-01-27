@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MyStringManager : MonoBehaviour {
+public class ThoughtBubble : MonoBehaviour {
 
     #region Variables
     #region Text Vars
     Text textComponent;
 
-    string sampleStr = "This is a test to see if this script actually works.";
+    public string mainText = "This is a test to see if the script actually works";
 
     int strIndex = 0;
     #endregion Text Vars
@@ -21,7 +21,7 @@ public class MyStringManager : MonoBehaviour {
     #region Adjustable Vars
     [Range(1, 200)]
     [SerializeField]
-    float speechSpeed = 20f, bubbleBufferX = 50f, bubbleBufferY = 30f;
+    float speechSpeed = 60f, bubbleBufferX = 50f, bubbleBufferY = 30f;
     #endregion Adjustable Vars
 
     #region Rectangle Transforms
@@ -32,7 +32,7 @@ public class MyStringManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        InitializeComponents();
+        FindComponents();
         ClearText();
     }
 
@@ -49,14 +49,12 @@ public class MyStringManager : MonoBehaviour {
         //}
     }
 
-    private void InitializeComponents()
+    private void FindComponents()
     {
         textComponent = transform.Find("Text").GetComponent<Text>();
         textRectTrans = transform.Find("Text").GetComponent<RectTransform>();
-        bubbleRecTrans = transform.Find("ThoughtBubbleGroup").
-            Find("ThoughtBubble").GetComponent<RectTransform>();
-        dotsRectTrans = transform.Find("ThoughtBubbleGroup").
-            Find("ThoughtDots").GetComponent<RectTransform>();
+        bubbleRecTrans = transform.Find("ThoughtBubble").GetComponent<RectTransform>();
+        dotsRectTrans = transform.Find("ThoughtDots").GetComponent<RectTransform>();
 
         textComponent.text = "";
     }
@@ -65,9 +63,9 @@ public class MyStringManager : MonoBehaviour {
     {
         currentTime += Time.deltaTime * speechSpeed;
 
-        if (strIndex < sampleStr.Length && currentTime >= maxTime)
+        if (strIndex < mainText.Length && currentTime >= maxTime)
         {
-            textComponent.text += sampleStr[strIndex];
+            textComponent.text += mainText[strIndex];
             strIndex++;
 
             currentTime = Mathf.Epsilon;
