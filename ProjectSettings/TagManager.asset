@@ -8,6 +8,8 @@ TagManager:
   - ThoughtBubbleGroup
   - ThoughtDots
   - Text
+  - PhoneView
+  - Credits
   - Paralax
   - LeftBounds
   - RightBounds
