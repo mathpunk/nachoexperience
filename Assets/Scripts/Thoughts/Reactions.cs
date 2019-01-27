@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Reactions : MonoBehavior
+public class Reactions : MonoBehaviour
 {
     public enum Verb
     {
@@ -40,23 +41,24 @@ public class Reactions : MonoBehavior
         return "Sigh... I don't know why I thought that would help me feel less homesick.";
     }
 
-    public Start()
+    public void Start()
     {
-        CatQuips.Add(Light, "You look just like my old cat, Mr Whiskers!");
-        CatQuips.Add(Photograph, "I guess I'm a guy who takes cat photos now. Huh.");
-        CatQuips.Add(Record, "C'mon kitty... Meow or purr or something... Dang.");
-        CatQuips.Add(Pay, "You're trying to buy something from a cat, Nacho. Wow. I better go home and rest.");
+        CatQuips.Add(Verb.Light, "You look just like my old cat, Mr Whiskers!");
+        CatQuips.Add(Verb.Photograph, "I guess I'm a guy who takes cat photos now. Huh.");
+        CatQuips.Add(Verb.Record, "C'mon kitty... Meow or purr or something... Dang.");
+        CatQuips.Add(Verb.Pay, "You're trying to buy something from a cat, Nacho. Wow. I better go home and rest.");
 
-        BeachQuips.Add(Photograph, "A great view. The water reaches right up to the city... just like in Mar del Plata.");
+        BeachQuips.Add(Verb.Photograph, "A great view. The water reaches right up to the city... just like in Mar del Plata.");
 
-        GrocerQuips.Add(Pay, "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already.");
+        GrocerQuips.Add(Verb.Pay, "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already.");
 
-        BluesBandQuips.Add( Record, "Yes! I love it! The blues reminds me that you can be happy even when times are tough.");
+        BluesBandQuips.Add(Verb.Record, "Yes! I love it! The blues reminds me that you can be happy even when times are tough.");
     }
 
     private string GetQuipOrDefault(Dictionary<Verb, string> quips, Verb verb)
     {
-        return quips.ContainsKey(verb) ? quips[verb] : GeneralFailure();
+        string quip = "";
+        return (quips.TryGetValue(verb, out quip)) ? quip : GeneralFailure();
     }
 
     public string GetQuip(Verb verb, Item item)
