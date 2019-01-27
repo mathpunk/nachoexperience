@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+// recovery version
+
 public class Reactions
 {
     public enum Verb { Light, Photograph, Record, Pay };

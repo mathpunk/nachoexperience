@@ -1,7 +1,4 @@
-// version 0.1
-// Goal: Quips about the initial, unfilled, sad & lonely state of Nacho's place.
-
-// General
+// recovery version
 
 public class Hints
 {
