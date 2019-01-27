@@ -1,5 +1,7 @@
-// recovery version
+// version 0.1
+// Goal: Quips about the initial, unfilled, sad & lonely state of Nacho's place.
 
+// General
 using System.Collections.Generic;
 public class Sad
 {

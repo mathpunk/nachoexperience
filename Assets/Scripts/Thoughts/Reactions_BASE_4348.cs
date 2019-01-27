@@ -5,24 +5,8 @@ using System.Collections.Generic;
 public class Reactions
 {
     public enum Verb { Light, Photograph, Record, Pay };
+    public enum Item { Beach, Cat, Grocer, BluesBand };
     public enum Action { Light, Cat, Beach, Photograph, Grocer, Pay, BluesBand, Record };
-    public enum Item {
-        // Wanted items
-        Beach,
-        Cat,
-        Grocer,
-        BluesBand,
-        // Unwanted items
-        Squirrel,
-        Rat,
-        TacoVendor,
-        ChineseRestaurant,
-        MusicShop,
-        Band,
-        NavyPier,
-        FerrisWheel
-    };
-
 
     public string GetQuip(Action action, Verb verb, Item item)
     {
@@ -32,27 +16,20 @@ public class Reactions
             case Action.Cat:
                 return "I'll call you Mr. Whiskers. I feel less lonely already.";
 
-            case Action.Light:
-            case Action.Rat:
-                return "Aaaaaaaaaaaaaaaaaaaaaahhhhh!!!!!";
-
-            case Action.Light:
-            case Action.Squirrel:
-                return "Cute. But not a very good pet.";
-
-            case Action.Photograph:
             case Action.Beach:
+            case Action.Photograph:
                 return "The water reaches right up to the city… just like in Mar del Plata.";
 
-            case Action.Pay:
             case Action.Grocer:
+            case Action.Pay:
                 return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already."
 
-            case Action.Record:
             case Action.BluesBand:
-                return "Mm, yes! I love it. The blues reminds me that you can be happy even when times are tough.";
+            case Action.Record:
+                return "Mm, yes! The blues reminds me that you can be happy even when times are tough.";
 
             default:
+                // return "Sigh... I don't know why I thought that " + Gerund(verb) + " a " + item + " would help me feel better...";
                 return "Sigh... I don't know why I thought that would help me feel less homesick."
         }
     }
