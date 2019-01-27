@@ -32,6 +32,9 @@ public class PlayerBehavior : MonoBehaviour
     {
         m_player = GameObject.Find("PlayerSprite");
 
+        m_walkingLeftStrip = new List<Sprite>();
+        m_walkingRightStrip = new List<Sprite>();
+
         m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_4"));
         m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_3"));
         m_walkingLeftStrip.Add(Resources.Load<Sprite>("Sprites/Nacho/NachoWalkCycle_Left_2"));
