@@ -4,7 +4,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Controller2D))]
-public class CameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour
+{
 
     #region Variables
     #region Camera Vars
@@ -13,6 +14,10 @@ public class CameraController : MonoBehaviour {
     BoxCollider2D cameraCollider;
 
     Vector2 cameraTopRight, cameraBotLeft, moveCamDist, cameraDimensions;
+
+    float camBorderLeft, camBorderRight;
+
+    Transform leftBounds, rightBounds;
 
     bool camRight, camLeft, camTop, camBot;
     #endregion Camera Vars
@@ -23,40 +28,84 @@ public class CameraController : MonoBehaviour {
     Vector2 playerTopRight, playerBotLeft;
     #endregion Player Vars
 
-    #region Floats
-    float height, width;
+    #region Paralax Vars
+    Transform cityBG;
 
     [Range(0.001f, 1f)]
     [SerializeField]
-    float cameraColliderReduction;
-    #endregion Floats
+    float cityParalax = 0.8f;
+    #endregion Paralax Vars
+
+    Controller2D controller;
+
+    Player playerScript;
+
+    Vector3 cameraVelocity;
+
+    //#region Floats
+    //float height, width;
+
+    //[Range(0.001f, 1f)]
+    //[SerializeField]
+    //float cameraColliderReduction;
+    ////#endregion Floats
     #endregion Variables
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         cameraCollider = gameObject.GetComponent<BoxCollider2D>();
         playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        //cityBG = GameObject.FindGameObjectWithTag("Paralax").GetComponent<Transform>();
+
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        controller = gameObject.GetComponent<Controller2D>();
+
+        //leftBounds = GameObject.FindGameObjectWithTag("LeftBounds").GetComponent<Transform>();
+        //rightBounds = GameObject.FindGameObjectWithTag("RightBounds").GetComponent<Transform>();
+
+        print(playerScript);
+        print(controller);
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         ResizeCameraCollider();
         GetColliderPositions();
         DetectPlayerTouchingCamCol();
+
+        //print(playerCollider);
+        //print(leftBounds);
+
+        //if (playerCollider.transform.position.x > leftBounds.position.x && playerCollider.transform.position.x < rightBounds.position.x)
         MoveCam();
+        //else print("touching border");
+
+        //Paralax();
+
+        //print(camBorderLeft);
+
+        //if (cameraBotLeft.x <= -30f) print("past left border");
     }
 
     private void ResizeCameraCollider()
     {
         cam = Camera.main;
-        height = 2f * cam.orthographicSize;
-        width = height * cam.aspect * 0.5f;
+        //height = 2f * cam.orthographicSize;
+        //width = height * cam.aspect;
 
-        cameraDimensions.x = width * cameraColliderReduction;
-        cameraDimensions.y = height * cameraColliderReduction;
+        cameraDimensions.x = playerCollider.bounds.size.x;
+        cameraDimensions.y = playerCollider.bounds.size.y;
+
+        //cameraDimensions.x = width * cameraColliderReduction;
+        //cameraDimensions.y = height * cameraColliderReduction;
 
         cameraCollider.size = cameraDimensions;
+
+        camBorderLeft = cam.transform.position.x - cam.orthographicSize;
+        camBorderRight = cam.transform.position.x + cam.orthographicSize;
     }
 
     private void GetColliderPositions()
@@ -95,5 +144,14 @@ public class CameraController : MonoBehaviour {
         if (!camRight && !camLeft && !camTop && !camBot) moveCamDist = Vector2.zero;
 
         cam.transform.Translate(moveCamDist.x, moveCamDist.y, Mathf.Epsilon);
+
+        //cameraVelocity = new Vector3(playerScript.velocity.x, 0, 0);
+
+        //controller.Move(cameraVelocity * Time.deltaTime);
     }
+
+    //private void Paralax()
+    //{
+    //    cityBG.position = new Vector3(cam.transform.position.x * cityParalax, cityBG.position.y, 0.1f);
+    //}
 }

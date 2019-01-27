@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     #endregion Speed Vars
     #endregion Variables
 
-    Vector2 velocity;
+    [HideInInspector] public Vector2 velocity;
     Controller2D controller;
 
     private void Start()
