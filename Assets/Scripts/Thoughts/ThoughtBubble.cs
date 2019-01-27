@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThoughtBubble : MonoBehaviour {
+public class ThoughtBubble : MonoBehaviour
+{
 
     #region Variables
     #region Text Vars
@@ -30,20 +31,20 @@ public class ThoughtBubble : MonoBehaviour {
     #endregion Varables
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         FindComponents();
         ClearText();
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         BuildTextBox();
         ResizeThoughtBubble();
-        PositionThoguhtDots();
+        //PositionThoguhtDots();
 
-        //if (strIndex >= sampleStr.Length)
+        //if (strIndex >= mainText.Length)
         //{
         //    ClearText();
         //}
@@ -88,7 +89,7 @@ public class ThoughtBubble : MonoBehaviour {
 
     private void ClearText()
     {
-            textComponent.text = "";
-            strIndex = 0;
+        textComponent.text = "";
+        strIndex = 0;
     }
 }

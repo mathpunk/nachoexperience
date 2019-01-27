@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114930119847617736}
   m_Layer: 0
   m_Name: MainCharStandIn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981388684148072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -3.17, z: 0}
+  m_LocalPosition: {x: 0.2, y: -2.49, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,6 +84,9 @@ MonoBehaviour:
     m_Bits: 256
   horizontalRayCount: 4
   verticalRayCount: 4
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  boxCollider: {fileID: 0}
 --- !u!114 &114930119847617736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcb1b70e1dd7534fae45e62ee2bd368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6.5
+  jumpPower: 0
+  groundedTraction: 50
+  airialTraction: 20
+  fallSpeed: 100
+  speed: 10
+  velocity: {x: 0, y: 0}
 --- !u!212 &212314244490807400
 SpriteRenderer:
   m_ObjectHideFlags: 1
