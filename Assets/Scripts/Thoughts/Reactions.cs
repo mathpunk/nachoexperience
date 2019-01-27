@@ -4,16 +4,13 @@ using System.Collections.Generic;
 
 public class Reactions
 {
-    public enum Verb
-    {
+    public enum Verb {
         Light,
         Photograph,
         Record,
         Pay
     };
-
-    public enum Item
-    {
+    public enum Item {
         // Wanted items
         Beach,
         Cat,
@@ -43,15 +40,13 @@ public class Reactions
                 switch (verb)
                 {
                     case Verb.Light:
-                        return "I'll call you Mr. Whiskers! I feel less lonely already.";
+                        return "You look just like my old cat, Mr. Whiskers!";
                     case Verb.Photograph:
                         return "I guess I'm a guy who takes cat photos now. Huh.";
                     case Verb.Record:
                         return "C'mon kitty... Meow or purr or something... Dang.";
                     case Verb.Pay:
                         return "I don't think this cat takes cards. What a weird thing to do --- I better go home and rest.";
-                    default:
-                        return GeneralFailure();
                 }
 
             case Item.Beach:
@@ -61,7 +56,6 @@ public class Reactions
                         return "A great view. The water reaches right up to the city... just like in Mar del Plata.";
                     default:
                         return GeneralFailure();
-                }
 
             case Item.Grocer:
                 switch (verb)
@@ -92,3 +86,11 @@ public class Reactions
     }
 
 }
+
+// case Action.Light:
+// case Action.Rat:
+//     return "Aaaaaaaaaaaaaaaaaaaaaahhhhh!!!!!";
+
+// case Action.Light:
+// case Action.Squirrel:
+//     return "Cute. But not a very good pet.";
