@@ -56,17 +56,16 @@ public class CameraController : MonoBehaviour
     {
         cameraCollider = gameObject.GetComponent<BoxCollider2D>();
         playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
-        //cityBG = GameObject.FindGameObjectWithTag("Paralax").GetComponent<Transform>();
+        cityBG = GameObject.FindGameObjectWithTag("Paralax").GetComponent<Transform>();
 
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         controller = gameObject.GetComponent<Controller2D>();
 
-        //leftBounds = GameObject.FindGameObjectWithTag("LeftBounds").GetComponent<Transform>();
-        //rightBounds = GameObject.FindGameObjectWithTag("RightBounds").GetComponent<Transform>();
+        leftBounds = GameObject.FindGameObjectWithTag("LeftBounds").GetComponent<Transform>();
+        rightBounds = GameObject.FindGameObjectWithTag("RightBounds").GetComponent<Transform>();
 
-        print(playerScript);
-        print(controller);
+        print(cityBG);
     }
 
     // Update is called once per frame
@@ -79,11 +78,11 @@ public class CameraController : MonoBehaviour
         //print(playerCollider);
         //print(leftBounds);
 
-        //if (playerCollider.transform.position.x > leftBounds.position.x && playerCollider.transform.position.x < rightBounds.position.x)
-        MoveCam();
+        if (playerCollider.transform.position.x > leftBounds.position.x && playerCollider.transform.position.x < rightBounds.position.x)
+            MoveCam();
         //else print("touching border");
 
-        //Paralax();
+        Paralax();
 
         //print(camBorderLeft);
 
@@ -144,14 +143,10 @@ public class CameraController : MonoBehaviour
         if (!camRight && !camLeft && !camTop && !camBot) moveCamDist = Vector2.zero;
 
         cam.transform.Translate(moveCamDist.x, moveCamDist.y, Mathf.Epsilon);
-
-        //cameraVelocity = new Vector3(playerScript.velocity.x, 0, 0);
-
-        //controller.Move(cameraVelocity * Time.deltaTime);
     }
 
-    //private void Paralax()
-    //{
-    //    cityBG.position = new Vector3(cam.transform.position.x * cityParalax, cityBG.position.y, 0.1f);
-    //}
+    private void Paralax()
+    {
+        cityBG.position = new Vector3(cam.transform.position.x * cityParalax, cityBG.position.y, 0.1f);
+    }
 }

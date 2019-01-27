@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ThoughtBubble
+  - ThoughtBubbleGroup
+  - ThoughtDots
+  - Text
+  - Paralax
+  - LeftBounds
+  - RightBounds
   layers:
   - Default
   - TransparentFX

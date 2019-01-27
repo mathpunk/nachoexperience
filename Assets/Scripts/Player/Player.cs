@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     bool jumping = false;
 
-    [Range(1, 100)]
+    [Range(0, 100)]
     [SerializeField]
     float jumpPower = 50;
     #endregion Input Vars
