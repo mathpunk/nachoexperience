@@ -25,7 +25,7 @@ public class Hints
     };
 
     public string[] Studio = {
-        "Work, work, work. I should really put on some *music* that's just for me...",
+        "Isn't it funny that *music* about hard times can cheer you up?",
         "Chicago’s a great music town. Maybe I should *go listen to something I like*...",
         "I've been thinking about my brother. We always liked listening to *the blues* together."
     };
