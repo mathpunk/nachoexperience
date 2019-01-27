@@ -29,6 +29,7 @@ public class Reactions
         NavyPier,
         FerrisWheel
     };
+    private Dictionary<Item, Dictionary<Verb, string>> CatReactions;
 
     public string GeneralFailure()
     {
@@ -43,7 +44,7 @@ public class Reactions
                 switch (verb)
                 {
                     case Verb.Light:
-                        return "You look just like my old cat, Mr. Whiskers!";
+                        return "You look just like my old cat, Mr Whiskers!";
                     case Verb.Photograph:
                         return "I guess I'm a guy who takes cat photos now. Huh.";
                     case Verb.Record:
@@ -58,7 +59,7 @@ public class Reactions
                 switch (verb)
                 {
                     case Verb.Photograph:
-                        return "A great view. The water reaches right up to the city... just like in Mar del Plata.";
+                        return "The water reaches right up to the city... just like in Mar del Plata.";
                     default:
                         return GeneralFailure();
                 }
@@ -67,7 +68,7 @@ public class Reactions
                 switch (verb)
                 {
                     case Verb.Pay:
-                        return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s milanesa already.";
+                        return "Chicken, garlic, parsley, tomato, lemon... and cheese, of course. I can almost taste my mother’s homemade milanesa already.";
                     default:
                         return GeneralFailure();
                 }
@@ -76,7 +77,7 @@ public class Reactions
                 switch (verb)
                 {
                     case Verb.Record:
-                        return "Yes! I love it! The blues reminds me that you can be happy even when times are tough.";
+                        return "It's such good music. It makes me think of seeing The Blues Brothers for the first time, with my brother.";
                     default:
                         return GeneralFailure();
                 }
